@@ -32,10 +32,9 @@ guard let fontFormat = FontFormatHeader.init(rawValue: fileSignature) else {
     throw error.unknownFontFileFormat
 }
 
-
 var fontFileData: FileDataProtocol?
 
-// handle binary it according to the format
+// handle binary according to the format
 switch fontFormat {
 case .opentype:
     fontFileData = OTFFileData(binary: binary)
