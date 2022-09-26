@@ -1,3 +1,3 @@
 # FontFileReader
 
-A description of this package.
+Package to read tables of font files like otf, woff and woff2.
