@@ -100,7 +100,7 @@ public struct OS2Table {
         case zlib
     }
     
-    init(binary: BinaryFile) {
+    public init(binary: BinaryFile) {
         self.version =              binary.getUInt16()
         self.xAvgCharWidth =        binary.getInt16()
         self.usWeightClass =        binary.getUInt16()

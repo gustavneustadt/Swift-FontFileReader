@@ -6,7 +6,7 @@
 import Foundation
 
 public struct WOFFFileData: FileDataProtocol {
-    struct Header {
+    public struct Header {
         let signature:              UInt32,
             flavor:                 UInt32,
             length:                 UInt32,
@@ -21,7 +21,7 @@ public struct WOFFFileData: FileDataProtocol {
             privOffset:             UInt32,
             privLength:             UInt32
         
-        init(_ binary: BinaryFile) {
+        public init(_ binary: BinaryFile) {
             self.signature =        binary.getUInt32()
             self.flavor =           binary.getUInt32()
             self.length =           binary.getUInt32()
@@ -38,8 +38,8 @@ public struct WOFFFileData: FileDataProtocol {
         }
     }
     
-    struct TableDirectoryEntry {
-        let tag:                    String,
+    public struct TableDirectoryEntry {
+        public let tag:                    String,
             offset:                 UInt32,
             compLength:             UInt32,
             origLength:             UInt32,
@@ -49,7 +49,7 @@ public struct WOFFFileData: FileDataProtocol {
             return self.compLength != self.origLength
         }
         
-        init(_ binary: BinaryFile) {
+        public init(_ binary: BinaryFile) {
             self.tag =              binary.getString(length: 4)
             self.offset =           binary.getUInt32()
             self.compLength =       binary.getUInt32()
@@ -60,7 +60,7 @@ public struct WOFFFileData: FileDataProtocol {
     
     
     
-    init?(binary: BinaryFile) {
+    public init?(binary: BinaryFile) {
         binary.setPosition(0)
         self.header = Header(binary)
         self.tableDirectoryEntries = WOFFFileData.parseTableDirectoryEntries(binary: binary, numTables: self.header.numTables)
@@ -106,7 +106,7 @@ public struct WOFFFileData: FileDataProtocol {
         return OS2Table(binary: binary)
     }
     
-    let os2Table: OS2Table
-    let header: Header
-    let tableDirectoryEntries: [String : TableDirectoryEntry]
+    public let os2Table: OS2Table
+    public let header: Header
+    public let tableDirectoryEntries: [String : TableDirectoryEntry]
 }

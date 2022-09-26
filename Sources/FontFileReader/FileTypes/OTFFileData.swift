@@ -36,7 +36,7 @@ public struct OTFFileData: FileDataProtocol {
         }
     }
     
-    init?(binary: BinaryFile) {
+    public init?(binary: BinaryFile) {
         binary.setPosition(0)
         self.tableDirectory = TableDirectory(binary)
         self.tableRecords = OTFFileData.parseTableRecords(binary: binary, numTables: tableDirectory.numTables)

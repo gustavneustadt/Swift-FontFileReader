@@ -13,18 +13,18 @@ public class BinaryFile {
         self.data = BinaryFile.getUInt8ArrayFromData(data: data)
     }
     
-    static func getUInt8ArrayFromData(data: NSData) -> [UInt8] {
+    public static func getUInt8ArrayFromData(data: NSData) -> [UInt8] {
         var array = [UInt8](repeating: 0, count: data.length)
         
         data.getBytes(&array, length: data.length)
         return array
     }
     
-    func step(_ steps: Int = 1) -> Void {
+    public func step(_ steps: Int = 1) -> Void {
         position = position + steps
     }
     
-    func getString(length: Int = 1) -> String {
+    public func getString(length: Int = 1) -> String {
         var array: [UInt8] = []
         
         for _ in 1...length {
@@ -36,22 +36,22 @@ public class BinaryFile {
         return String(data: data, encoding: .utf8) ?? ""
     }
     
-    func getUInt8() -> UInt8 {
+    public func getUInt8() -> UInt8 {
         let returnData = data[position]
         
         self.step()
         return returnData
     }
     
-    func getUInt16() -> UInt16 {
+    public func getUInt16() -> UInt16 {
         return UInt16(self.getUInt8())  << 8 + UInt16(self.getUInt8())
     }
     
-    func getUInt32() -> UInt32 {
+    public func getUInt32() -> UInt32 {
         return UInt32(self.getUInt16()) << 16 + UInt32(self.getUInt16())
     }
     
-    func get255UInt16() -> UInt16 {
+    public func get255UInt16() -> UInt16 {
         var code: UInt8,
             value: UInt16,
             value2: UInt16
@@ -82,7 +82,7 @@ public class BinaryFile {
         return value
     }
     
-    func getUIntBase128() -> UInt32? {
+    public func getUIntBase128() -> UInt32? {
         var result: UInt32 = 0
         
         for i in 0...4 {
@@ -107,21 +107,21 @@ public class BinaryFile {
        
     }
     
-    func getInt8() -> Int8 {
+    public func getInt8() -> Int8 {
         return Int8(bitPattern: self.getUInt8())
     }
-    func getInt16() -> Int16 {
+    public func getInt16() -> Int16 {
         return Int16(bitPattern: self.getUInt16())
     }
-    func getInt32() -> Int32 {
+    public func getInt32() -> Int32 {
         return Int32(bitPattern: self.getUInt32())
     }
     
-    func printHex<T: BinaryInteger>(_ int: T) -> String  {
+    public func printHex<T: BinaryInteger>(_ int: T) -> String  {
         return String(int, radix: 16)
     }
     
-    func setPosition(_ position: Int?) -> Void {
+    public func setPosition(_ position: Int?) -> Void {
         guard position != nil else { return }
         self.position = position!
     }

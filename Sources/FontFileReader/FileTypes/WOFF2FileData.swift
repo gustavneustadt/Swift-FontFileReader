@@ -16,7 +16,7 @@ public struct WOFF2FileData: FileDataProtocol {
         "feat", "fmtx", "fvar", "gvar", "hsty", "just", "lcar", "mort", "morx",
         "opbd", "prop", "trak", "Zapf", "Silf", "Glat", "Gloc", "Feat", "Sill"
     ];
-    struct Header {
+    public struct Header {
         let signature:                      UInt32,
             flavor:                         UInt32,
             length:                         UInt32,
@@ -32,7 +32,7 @@ public struct WOFF2FileData: FileDataProtocol {
             privOffset:                     UInt32,
             privLength:                     UInt32
         
-        init(_ binary: BinaryFile) {
+        public init(_ binary: BinaryFile) {
             self.signature =                binary.getUInt32()
             self.flavor =                   binary.getUInt32()
             self.length =                   binary.getUInt32()
@@ -50,7 +50,7 @@ public struct WOFF2FileData: FileDataProtocol {
         }
     }
     
-    struct TableDirectoryEntry {
+    public struct TableDirectoryEntry {
         
         let flags:                          UInt8,
             tag:                            String,
@@ -61,7 +61,7 @@ public struct WOFF2FileData: FileDataProtocol {
             origOffset:                     UInt32
         
         
-        init?(_ binary: BinaryFile, origOffset: UInt32 = 0) {
+        public init?(_ binary: BinaryFile, origOffset: UInt32 = 0) {
             self.flags = binary.getUInt8()
             
             var tempTag: String
@@ -88,7 +88,7 @@ public struct WOFF2FileData: FileDataProtocol {
         }
     }
     
-    struct CollectionHeader {
+    public struct CollectionHeader {
         let version:                        UInt32,
             numFonts:                       UInt16
         
@@ -98,7 +98,7 @@ public struct WOFF2FileData: FileDataProtocol {
         }
     }
     
-    struct CollectionFontEntry {
+    public struct CollectionFontEntry {
         let numTables:                      UInt16,
             flavor:                         String,
             index:                          UInt16
@@ -110,7 +110,7 @@ public struct WOFF2FileData: FileDataProtocol {
         }
     }
     
-    init?(binary: BinaryFile) {
+    public init?(binary: BinaryFile) {
         binary.setPosition(0)
         self.header = Header(binary)
         self.tableDirectoryEntries = WOFF2FileData.parseTableDirectoryEntries(binary: binary, numTables: self.header.numTables)
@@ -164,10 +164,10 @@ public struct WOFF2FileData: FileDataProtocol {
         return (tempCollectionHeader, tempCollectionFontEntries)
     }
     
-    let header: Header
+    public let header: Header
     
-    let tableDirectoryEntries: OrderedDictionary<String, TableDirectoryEntry>
-    let collectionHeader: CollectionHeader?
-    let collectionFontEntries: [String: CollectionFontEntry]?
-    let os2Table: OS2Table
+    public let tableDirectoryEntries: OrderedDictionary<String, TableDirectoryEntry>
+    public let collectionHeader: CollectionHeader?
+    public let collectionFontEntries: [String: CollectionFontEntry]?
+    public let os2Table: OS2Table
 }
