@@ -4,7 +4,7 @@ Package to read tables of font files like otf, woff and woff2.
 At the moment only OS2 Support.
 
 ## Why?
-I needed a way to read the OS2 table from a given font file. Because I was not able to implement fonttools into an app I’am developing I had to write a custom swift implementation.  
+I needed a way to read the OS2 table from a given font file. Because I was not able to implement [fonttools](https://github.com/fonttools/fonttools) into an app I’m developing I had to write a custom swift implementation.  
 Feel free to contribute.
 ## Usage
 
