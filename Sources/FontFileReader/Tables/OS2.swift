@@ -5,7 +5,7 @@
 //
 import Foundation
 
-struct OS2Table {
+public struct OS2Table {
     let version:                    UInt16,
         xAvgCharWidth:              Int16,
         usWeightClass:              UInt16,

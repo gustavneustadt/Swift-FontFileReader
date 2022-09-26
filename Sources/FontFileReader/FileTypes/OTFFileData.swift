@@ -4,7 +4,7 @@
 //  Created by Gustav Neustadt on 31.08.22.
 //
 
-struct OTFFileData: FileDataProtocol {
+public struct OTFFileData: FileDataProtocol {
     
     struct TableRecord {
         let tableTag:               String,

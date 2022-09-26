@@ -5,7 +5,7 @@
 //
 import UniformTypeIdentifiers
 
-enum FontFormatHeader: UInt32, CaseIterable, Codable {
+public enum FontFormatHeader: UInt32, CaseIterable, Codable {
     case woff2 = 0x774f4632
     case woff = 0x774f4646
     case opentype = 0x4f54544f

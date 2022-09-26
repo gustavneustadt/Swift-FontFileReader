@@ -5,11 +5,11 @@
 //
 import Foundation
 
-class BinaryFile {
+public class BinaryFile {
     var position: Int = 0
     var data: [UInt8]
     
-    init(data: NSData) {
+    public init(data: NSData) {
         self.data = BinaryFile.getUInt8ArrayFromData(data: data)
     }
     

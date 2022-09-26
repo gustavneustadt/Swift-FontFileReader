@@ -5,7 +5,7 @@
 //
 import Foundation
 
-struct WOFFFileData: FileDataProtocol {
+public struct WOFFFileData: FileDataProtocol {
     struct Header {
         let signature:              UInt32,
             flavor:                 UInt32,

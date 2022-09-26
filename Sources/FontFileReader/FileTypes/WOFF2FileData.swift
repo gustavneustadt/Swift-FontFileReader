@@ -6,7 +6,7 @@
 import OrderedCollections
 import Brotli
 
-struct WOFF2FileData: FileDataProtocol {
+public struct WOFF2FileData: FileDataProtocol {
     static let knownTags = [
         "cmap", "head", "hhea", "hmtx", "maxp", "name", "OS/2", "post", "cvt ",
         "fpgm", "glyf", "loca", "prep", "CFF ", "VORG", "EBDT", "EBLC", "gasp",
