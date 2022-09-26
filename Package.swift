@@ -11,6 +11,10 @@ let package = Package(
         .library(
             name: "FontFileReader",
             targets: ["FontFileReader"]),
+        .library(name: "FileTypes", targets: ["FontFileReader"]),
+        .library(name: "Tables", targets: ["FontFileReader"]),
+        .library(name: "BinaryFile", targets: ["FontFileReader"]),
+        .library(name: "FileDataProtocol", targets: ["FontFileReader"]),
     ],
     dependencies: [
         .package(url: "https://github.com/karlvr/Brotli", branch: "master"),
