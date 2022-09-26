@@ -47,7 +47,7 @@ public struct OS2Table {
         usWinDescent:               UInt16
     
     public struct FsSelection {
-        let italic:             Bool,
+        public let italic:             Bool,
             underscore:         Bool,
             negative:           Bool,
             outlined:           Bool,
