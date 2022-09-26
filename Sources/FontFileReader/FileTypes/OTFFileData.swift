@@ -6,7 +6,7 @@
 
 public struct OTFFileData: FileDataProtocol {
     
-    struct TableRecord {
+    public struct TableRecord {
         let tableTag:               String,
             checksum:               UInt32,
             offset:                 UInt32,
@@ -20,7 +20,7 @@ public struct OTFFileData: FileDataProtocol {
         }
     }
     
-    struct TableDirectory {
+    public struct TableDirectory {
         let sfntVersion:            UInt32,
             numTables:              UInt16,
             searchRange:            UInt16,
@@ -61,7 +61,7 @@ public struct OTFFileData: FileDataProtocol {
         return OS2Table(binary: binary)
     }
     
-    let tableDirectory: TableDirectory
-    let tableRecords: [String : TableRecord]
-    let os2Table: OS2Table
+    public let tableDirectory: TableDirectory
+    public let tableRecords: [String : TableRecord]
+    public let os2Table: OS2Table
 }

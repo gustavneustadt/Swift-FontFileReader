@@ -41,6 +41,6 @@ public enum FontFormatHeader: UInt32, CaseIterable, Codable {
     
 }
 
-protocol FileDataProtocol {
+public protocol FileDataProtocol {
     var os2Table: OS2Table { get }
 }
