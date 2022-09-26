@@ -57,6 +57,7 @@ let fontStyle = fontFileData!.os2Table.fsSelectionDecoded
 ## Todo
 - [ ] CFF Table Support + Decompression in WOFF2
 - [ ] implement custom errors to handle errors while parsing (change functions to throwing ones)
+- [ ] Add comments
 
 ### Resources
 [W3 WOFF Specification](https://www.w3.org/TR/WOFF/)
