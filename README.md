@@ -1,6 +1,6 @@
 # FontFileReader
 
-Package to read tables of font files like otf, woff and woff2.
+A Package to read tables of font files like otf, woff and woff2.
 At the moment only OS2 Support.
 
 ## Why?
