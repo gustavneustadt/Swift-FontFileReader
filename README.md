@@ -1,6 +1,6 @@
 # FontFileReader
 
-Package to read tables of font files like otf, woff and woff2.
+A Package to read tables of font files like otf, woff and woff2.
 At the moment only OS2 Support.
 
 ## Why?
@@ -55,8 +55,9 @@ let fontStyle = fontFileData!.os2Table.fsSelectionDecoded
 ```
 
 ## Todo
-- [] CFF Table Support + Decompression in WOFF2
-- [] implement custom errors to handle errors while parsing (change functions to throwing ones)
+- [ ] CFF Table Support + Decompression in WOFF2
+- [ ] implement custom errors to handle errors while parsing (change functions to throwing ones)
+- [ ] Add comments
 
 ### Resources
 [W3 WOFF Specification](https://www.w3.org/TR/WOFF/)
