@@ -17,7 +17,7 @@ public enum FontFormatHeader: UInt32, CaseIterable, Codable {
         return lhs.order < rhs.order
     }
     
-    var description: String {
+    public var description: String {
         switch self {
         case .woff2:
             return "woff2"
@@ -28,7 +28,7 @@ public enum FontFormatHeader: UInt32, CaseIterable, Codable {
         }
     }
     
-    var order: Int {
+    public var order: Int {
         switch self {
         case .woff2:
             return 0
