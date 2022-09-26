@@ -29,7 +29,8 @@ let fileSignature = binary.getUInt32()
 
 // Pass the signature into FontFormatHeader objet and check for validity
 guard let fontFormat = FontFormatHeader.init(rawValue: fileSignature) else {
-    throw error.unknownFontFileFormat
+    // return or throw error
+    return
 }
 
 var fontFileData: FileDataProtocol?
@@ -45,6 +46,7 @@ case .woff2:
 }
 
 guard fontFileData != nil else {
+    // return or throw error
     return
 }
 
