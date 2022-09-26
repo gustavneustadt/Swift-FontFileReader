@@ -7,12 +7,12 @@
 public struct OTFFileData: FileDataProtocol {
     
     public struct TableRecord {
-        let tableTag:               String,
+        public let tableTag:               String,
             checksum:               UInt32,
             offset:                 UInt32,
             length:                 UInt32
         
-        init(_ binary: BinaryFile) {
+        public init(_ binary: BinaryFile) {
             self.tableTag =         binary.getString(length: 4)
             self.checksum =         binary.getUInt32()
             self.offset =           binary.getUInt32()
@@ -21,13 +21,13 @@ public struct OTFFileData: FileDataProtocol {
     }
     
     public struct TableDirectory {
-        let sfntVersion:            UInt32,
+        public let sfntVersion:            UInt32,
             numTables:              UInt16,
             searchRange:            UInt16,
             entrySelector:          UInt16,
             rangeShift:             UInt16
         
-        init(_ binary: BinaryFile) {
+        public init(_ binary: BinaryFile) {
             self.sfntVersion =      binary.getUInt32()
             self.numTables =        binary.getUInt16()
             self.searchRange =      binary.getUInt16()

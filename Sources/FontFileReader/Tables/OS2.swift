@@ -6,7 +6,7 @@
 import Foundation
 
 public struct OS2Table {
-    let version:                    UInt16,
+    public let version:                    UInt16,
         xAvgCharWidth:              Int16,
         usWeightClass:              UInt16,
         usWidthClass:               UInt16,
@@ -46,7 +46,7 @@ public struct OS2Table {
         usWinAscent:                UInt16,
         usWinDescent:               UInt16
     
-    struct FsSelection {
+    public struct FsSelection {
         let italic:             Bool,
             underscore:         Bool,
             negative:           Bool,
@@ -59,7 +59,7 @@ public struct OS2Table {
             oblique:            Bool
     }
     
-    var fsSelectionDecoded: FsSelection {
+    public var fsSelectionDecoded: FsSelection {
 
         let bits: [(key: String, value: UInt16)] = [
             ("italic",           0b0000000000000001),
@@ -95,7 +95,7 @@ public struct OS2Table {
         )
     }
     
-    enum CompressionType {
+    public enum CompressionType {
         case brotli
         case zlib
     }
