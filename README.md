@@ -60,8 +60,8 @@ let fontStyle = fontFileData!.os2Table.fsSelectionDecoded
 - [ ] Add comments
 
 ### Resources
-[W3 WOFF Specification](https://www.w3.org/TR/WOFF/)
-[W3 WOFF2 Specification](https://www.w3.org/TR/WOFF2/)
+- [W3 WOFF Specification](https://www.w3.org/TR/WOFF/)
+- [W3 WOFF2 Specification](https://www.w3.org/TR/WOFF2/)
 
-[Microsoft OTF Specification](https://docs.fileformat.com/font/otf/)
-[Fonttools](https://github.com/fonttools/fonttools)
+- [Microsoft OTF Specification](https://docs.fileformat.com/font/otf/)
+- [Fonttools](https://github.com/fonttools/fonttools)
