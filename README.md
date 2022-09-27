@@ -61,9 +61,10 @@ let fontStyle = fontFileData!.os2Table.fsSelectionDecoded
 - [ ] implement custom errors to handle errors while parsing (change functions to throwing ones)
 - [ ] Add comments
 
-### Resources
+### Credits
 - [W3 WOFF Specification](https://www.w3.org/TR/WOFF/)
 - [W3 WOFF2 Specification](https://www.w3.org/TR/WOFF2/)
 
 - [Microsoft OTF Specification](https://docs.fileformat.com/font/otf/)
 - [Fonttools](https://github.com/fonttools/fonttools)
+- [php-font-lib](https://github.com/dompdf/php-font-lib)
