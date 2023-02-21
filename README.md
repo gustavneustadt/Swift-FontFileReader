@@ -1,3 +1,4 @@
+*This package is no longer necessary since I've learned that `UIFont` can do that natively.*
 # FontFileReader
 
 A Package to read tables of font files like otf, woff and woff2.
